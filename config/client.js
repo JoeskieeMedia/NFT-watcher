@@ -1,8 +1,21 @@
-const config = {
-   clientOptions: {
-       intents: 32767
-   },
+require('dotenv').config();
 
-    
-}
-module.exports = config
+/**
+ * @typedef EnvironmentConfiguration
+ * @prop {string} DISCORD_TOKEN
+ */
+
+/**
+ * @type {EnvironmentConfiguration}
+ */
+const config = {
+  clientOption: {
+    intents: 32767,
+  },
+  Token: process.env.DISCORD_TOKEN,
+  Paths: {
+    commands: '../commands',
+    events: '../events',
+  },
+};
+module.exports = config;
